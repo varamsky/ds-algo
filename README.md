@@ -16,14 +16,20 @@
     - Bubble Sort
         - Worst Case: O(n^2)
         - Average Case: O(n^2)
+        - Best Case: O(n)
     - Quick Sort
         - Worst Case: O(n^2)
         - Average Case: O(n log n)
-    - Merge Sort
+        - Best Case: O(n log n)
     - Insertion Sort
         - Worst Case: O(n^2)
         - Average Case: O(n^2)
+        - Best Case: O(n)
     - Selection Sort
+        - Worst Case: O(n^2)
+        - Average Case: O(n^2)
+        - Best Case: O(n^2)
+    - Merge Sort
     - Heap Sort
 
 ### Data Structures

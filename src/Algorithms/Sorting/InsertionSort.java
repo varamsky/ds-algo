@@ -17,36 +17,22 @@ public class InsertionSort {
     Time Complexity: O(n^2)
 
     - SORT CARDS IN OUR HAND AS IN A CARD GAME
-
-    - Similar to Bubble sort
-    - Here in every iteration we find the smallest element and move it at the starting side(left) of the array
-    - Only one swap for every iteration instead of multiple swaps as in case of Bubble Sort
-
-    - Insertion sort works similarly as we sort cards in our hand in a card game.
-    - We assume that the first card is already sorted then, we select an unsorted card.
-    - If the unsorted card is greater than the card in hand, it is placed on the right otherwise, to the left.
-    - In the same way, other unsorted cards are taken and put in their right place.
-
-    - So at all times we mentally divide the array into 2 parts.
-    - Left part:
-        - Move all the smaller items into this part.
-        - This part is sorted at all times.
-        - This part increases in size with every iteration.
-    - Right part:
-        - This part is unsorted at all times.
-        - This part decreases in size with every iteration.
+    
+    - In this, we image a scenario where we have to sort the cards in a card game and INSERT chosen element at it's correct place after shifting others to make space
+    - We assume that first element is already sorted
+    - We chose an element from the remaining part
+    - We move backwards till we find an element smaller than the chosen element OR we exhaust the array and reach the start
+    - While we are moving back we keep shifting the elements one-to-the-right and make space in the front so that we can INSERT our chosen element at it's correct place
      */
     private static void insertionSort(int[] array) {
-        for (int i = 0; i < array.length; i++) {
-            int indexOfSmallest = i; // assuming the leftmost element to be smallest
-            for (int j = i; j < array.length; j++) {
-                if (array[indexOfSmallest] > array[j])
-                    indexOfSmallest = j; // comparing the current smallest element with others to find the actual smallest element
+        for (int i = 1; i < array.length; i++) { // we start from 1 assuming that 0 is already sorted
+            int temp = array[i]; // chose an element
+            int j = i - 1;
+            while (j >= 0 && array[j] > temp) {
+                array[j + 1] = array[j]; // shifting the bigger elements to the right to make space
+                j--;
             }
-            // finally swapping and placing the current smallest element in the left part
-            int temp = array[indexOfSmallest];
-            array[indexOfSmallest] = array[i];
-            array[i] = temp;
+            array[j + 1] = temp; // finally INSERT the element that we have chosen at the start into it's correct position
         }
     }
 }
