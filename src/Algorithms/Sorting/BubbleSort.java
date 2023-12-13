@@ -22,7 +22,7 @@ public class BubbleSort {
     - If it is not in its correct place we swap
     - Thus, in each step we move the largest element toward its correct position
     - After every pass(every time we traverse the array is called pass) the largest element is placed at its correct position
-    - So from the next time we skip the previously sorted element therefore, decreasing the sorted array size
+    - So from the next time we skip the previously sorted element therefore, decreasing the un-sorted array size
      */
     private static void bubbleSort(int[] array) {
         for (int i = 0; i < array.length - 1; i++) {

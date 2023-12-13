@@ -38,6 +38,7 @@
 - Queue
 - Linked List
     - Reverse a Linked List
+- HashMap
 - Tree
     - Invert a Binary Tree
     - BFS
